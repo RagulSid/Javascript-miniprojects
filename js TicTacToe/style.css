@@ -1,3 +1,6 @@
+html{
+    background-color: lightblue;
+}
 .cell{
     width: 75px;
     height: 75px;
@@ -8,6 +11,20 @@
     cursor: pointer;
 }
 
+button{
+    position: relative;
+    background-color: black;
+    border-radius: 4em;
+    font-size: 16px;
+    color: white;
+    padding: 0.8em 1.8em;
+    cursor: pointer;
+  }
+
+#gamegrid{
+    font-family: "Permanent Marker", cursive;
+    text-align: center;
+}
 #cellContainer{
     display: grid;
     grid-template-columns: repeat(3, auto);
