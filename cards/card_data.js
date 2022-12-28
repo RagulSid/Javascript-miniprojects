@@ -1,17 +1,17 @@
 const langs = [
-  {title: "js", description:"js program"},
-  {title: "python", description:"python code"},
-  {title: "java", description:"java objects"},
-  {title: "android", description:"android program"},
-  {title: "jquery", description:"jquery objects"},
-  {title: "ruby", description:"ruby code"}
+  {title: "js", description:"js program",id:"card0"},
+  {title: "python", description:"python code",id:"card1"},
+  {title: "java", description:"java objects",id:"card2"},
+  {title: "android", description:"android program",id:"card3"},
+  {title: "jquery", description:"jquery objects",id:"card4"},
+  {title: "ruby", description:"ruby code",id:"card5"}
 ]
 
 var dynamic = document.querySelector('.container');
 
 for (var i = 0; i < langs.length; i++) {
   var fetch = document.querySelector('.container').innerHTML;  
-  dynamic.innerHTML = `<div id="card${i}" class="boxes">
+  dynamic.innerHTML = `<div id="card${i}" class="boxes" onclick="cardinfo(this.id)">
       <div class="box-content">
         <h2>${langs[i].title}</h2>
         <p>
@@ -25,8 +25,8 @@ for (var i = 0; i < langs.length; i++) {
 } 
 
 function cardinfo(id){
-    const fullnames = langs.map(x => x.title + x.description);
-    console.log(fullnames);
+    const cardid = id;
+    // console.log(cardid);
+    const fullname = langs.filter((x) => cardid === x.id).map((x) => x.title + " , " + x.description);
+    console.log(fullname);
 }
-
-// const fullnames = users.filter((x) => x.title == "js").map((x) => x.description);
